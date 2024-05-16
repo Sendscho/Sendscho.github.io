@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Künstlerische Werke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #444;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #555;
+        }
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #666;
+        }
+        section {
+            padding: 20px;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .gallery img, .pdfs a, .music a, .videos video {
+            margin: 10px;
+            max-width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Meine Künstlerische Werke</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('bilder')">Bilder</a>
+    <a href="#" onclick="showSection('texte')">Texte / PDFs</a>
+    <a href="#" onclick="showSection('musik')">Musik</a>
+    <a href="#" onclick="showSection('videos')">Videos</a>
+</nav>
+
+<section id="bilder" class="content active gallery">
+    <h2>Bilder</h2>
+    <img src="bild1.jpg" alt="Kunstwerk 1">
+    <img src="bild2.jpg" alt="Kunstwerk 2">
+    <!-- Weitere Bilder hier -->
+</section>
+
+<section id="texte" class="content pdfs">
+    <h2>Texte / PDFs</h2>
+    <a href="dokument1.pdf" target="_blank">Dokument 1</a>
+    <a href="dokument2.pdf" target="_blank">Dokument 2</a>
+    <!-- Weitere PDFs hier -->
+</section>
+
+<section id="musik" class="content music">
+    <h2>Musik</h2>
+    <a href="musik1.mp3" target="_blank">Musikstück 1</a>
+    <a href="musik2.mp3" target="_blank">Musikstück 2</a>
+    <!-- Weitere Musikstücke hier -->
+</section>
+
+<section id="videos" class="content videos">
+    <h2>Videos</h2>
+    <video controls>
+        <source src="video1.mp4" type="video/mp4">
+        Dein Browser unterstützt das Video-Tag nicht.
+    </video>
+    <video controls>
+        <source src="video2.mp4" type="video/mp4">
+        Dein Browser unterstützt das Video-Tag nicht.
+    </video>
+    <!-- Weitere Videos hier -->
+</section>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.content');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
